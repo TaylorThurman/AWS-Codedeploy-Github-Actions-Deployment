@@ -48,10 +48,6 @@ Parameters:
     Type: String
     Default: t2.micro
     Description: The type of Amazon EC2 Linux instances that will be launched for this project.
-  InternetGateway:
-    Type: String
-    Default: igw-f5623893
-    Description: The Internet Gateway for the VPC
   AutoScalingGroupMinSize:
     Type: Number
     Default: 2
@@ -109,7 +105,13 @@ Resources:
           ClientIdList:
             - "sts.amazonaws.com"
           ThumbprintList:
-             - !Ref ThumbprintList 
+             - !Ref ThumbprintList
+      Condition:
+          StringLike:
+            - "repo:TaylorThurman/${GithubRepoName}:*"
+          ForAllValues:StringEquals:
+            - "sts.amazonaws.com"
+            - "https://token.actions.githubusercontent.com"
   GitHubIAMRole:
       Type: AWS::IAM::Role
       Properties:
