@@ -67,6 +67,7 @@ Parameters:
   GithubRepoName:
     Type: String 
     Description: GitHub repository name Ex-TestUser/TestCodeDeploy
+    Default: TaylorThurman/AWS-Codedeploy-Github-Actions-Deployment-Demo
 
 Resources:
   WebappRole:
@@ -106,12 +107,6 @@ Resources:
             - "sts.amazonaws.com"
           ThumbprintList:
              - !Ref ThumbprintList
-      Condition:
-          StringLike:
-            - "repo:TaylorThurman/${GithubRepoName}:*"
-          ForAllValues:StringEquals:
-            - "sts.amazonaws.com"
-            - "https://token.actions.githubusercontent.com"
   GitHubIAMRole:
       Type: AWS::IAM::Role
       Properties:
