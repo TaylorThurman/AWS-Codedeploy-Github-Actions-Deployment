@@ -105,8 +105,7 @@ Resources:
           Url: "https://token.actions.githubusercontent.com"
           ClientIdList:
             - "sts.amazonaws.com"
-          ThumbprintList:
-             - !Ref ThumbprintList
+          ThumbprintList: [6938fd4d98bab03faadb97b34396831e3780aea1]
   GitHubIAMRole:
       Type: AWS::IAM::Role
       Properties:
