@@ -236,6 +236,11 @@ Resources:
     Properties:
       Roles:
         - Ref: WebappRole
+  ImportedKeyPair:
+    Type: 'AWS::EC2::KeyPair'
+    Properties:
+      KeyName: Bernard
+      PublicKeyMaterial: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCn60fkbteF85mHEC8wTF1yQNhUWXwlokEWEhFVQH208TYqLCjdBkHosx8bIxiGt3arOgFLedmY2Lf853PQXkkqYZwKbDL/8ut5zp7UDyYezh6RBQ7bq+bjg3YmquVF4iGZKkBWF5hZ8vdlxOXfFtiydgTQYV9m+o+a7u/ZK/lcD42cqEF/I8bgfVykqvS5Kovao1CEGLLYNu9FLdg+qyzVO7nAAjXSOsTGxK4fniL38Z0Hr3Lu2vMAvtNgpBcFVrGmn1jYxcvaqmC9Kyu1uiav7g+kKtlLxycQ5ZMZHVVN/Vy98+dEvg2yZkJE6GTkyhV/kZ0BX/NZGwUBWJNFWIpb
   WebappLaunchConfig:
     Type: AWS::AutoScaling::LaunchConfiguration
     Properties:
@@ -244,6 +249,8 @@ Resources:
         Ref: ImageId
       InstanceType: 
         Ref: InstanceType
+      KeyName:
+        Ref: ImportedKeyPair
       SecurityGroups:
         - Ref: WebappSecurityGroup
       IamInstanceProfile:
