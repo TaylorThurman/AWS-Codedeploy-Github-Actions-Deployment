@@ -1,4 +1,5 @@
 #!/bin/bash
+sudo su -
 set -x
 
 # System control will return either "active" or "inactive".

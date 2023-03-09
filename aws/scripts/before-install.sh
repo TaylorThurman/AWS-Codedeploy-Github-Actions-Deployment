@@ -1,4 +1,5 @@
 #!/bin/bash
+sudo su -
 set -xe
 
 # Delete the old  directory as needed.

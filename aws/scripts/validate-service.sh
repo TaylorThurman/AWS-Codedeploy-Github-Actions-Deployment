@@ -1,4 +1,5 @@
 #!/bin/bash
+sudo su -
 set -x
 
 NUMBER_OF_ATTEMPTS=10
