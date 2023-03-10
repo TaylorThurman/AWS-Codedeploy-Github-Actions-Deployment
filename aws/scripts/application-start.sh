@@ -3,4 +3,4 @@ sudo su -
 set -xe
 
 cd app
-nohup java -jar SpringBootHelloWorldExampleApplication.jar
+nohup java -jar SpringBootHelloWorldExampleApplication.jar &
