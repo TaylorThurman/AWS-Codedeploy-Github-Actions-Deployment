@@ -19,4 +19,10 @@ public class HelloWorldController {
     public String goodbyeWorld() {
         return "Goodbye World";
     }
+
+
+    @GetMapping("/yo")
+    public String yo() {
+        return "Yo World";
+    }
 }
