@@ -2,5 +2,5 @@
 sudo su -
 set -xe
 
-# Start Tomcat, the application server.
-service tomcat start
+cd /home/ec2/app
+nohup java --add-opens java.base/java.lang=ALL-UNNAMED -jar SpringBootHelloWorldExampleApplication.jar &> nohup.out & tail -f nohup.out
