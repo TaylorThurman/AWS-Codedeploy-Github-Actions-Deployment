@@ -266,6 +266,15 @@ Resources:
           
               sudo yum install java-17-amazon-corretto-headless -y
               java -version
+          
+              yum install ruby -y
+              wget https://aws-codedeploy-${AWS::Region}.s3.${AWS::Region}.amazonaws.com/latest/install
+              chmod +x ./install
+              ./install auto
+              cd /tmp
+              yum install -y https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/amazon-ssm-agent.rpm
+              systemctl enable amazon-ssm-agent
+              systemctl start amazon-ssm-agent
 
   AutoScalingGroup:
     Type: AWS::AutoScaling::AutoScalingGroup
