@@ -9,8 +9,5 @@ fi
 
 mkdir -vp /usr/local/codedeployresources
 
-if [ -d /app ]; then
-    rm -rf /app
-fi
-
+rm -rf /app
 mkdir app

@@ -2,5 +2,5 @@
 sudo su -
 set -xe
 
-cd /home/ec2/app
+cd app
 nohup java --add-opens java.base/java.lang=ALL-UNNAMED -jar SpringBootHelloWorldExampleApplication.jar &> nohup.out & tail -f nohup.out
